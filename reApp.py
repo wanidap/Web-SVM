@@ -5,6 +5,7 @@ from PIL import Image
 import numpy as np
 import pandas as pd
 import streamlit as st
+import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications import  InceptionV3,DenseNet201
@@ -46,15 +47,19 @@ def main():
     file_up = st.file_uploader("Upload an image", type=['png','jpeg','jpg'])
 
     if file_up is not None:
-        random_name = str(uuid.uuid4()) # get unique name for the uploaded img
-        path = os.path.join(".", "userUpload", f"{random_name}.jpg") # get the saved img's path
-        Image.open(file_up).save(path) # save the img to the disk
-        st.image(Image.open(path), caption = 'Uploaded Image.', width=200) # display image that user uploaded
+        #random_name = str(uuid.uuid4()) # get unique name for the uploaded img
+        #path = os.path.join(".", "userUpload", f"{random_name}.jpg") # get the saved img's path
+        #Image.open(file_up).save(path) # save the img to the disk
+        #st.image(Image.open(path), caption = 'Uploaded Image.', width=200) # display image that user uploaded
+        st.image(file_up, caption = 'Uploaded Image.', width=200)
         st.write("")
         st.write("Just a second ...")
 
         # get a feature vector
-        img = image.load_img(path, target_size=(224, 224)) # load the saved img from the path and convert to (299,299,3) RGB img
+        #img = image.load_img(path, target_size=(224, 224)) # load the saved img from the path and convert to (299,299,3) RGB img
+        img = Image.open(file_up)
+        img = img.resize((224,224))
+
         feature = get_feature_(img) # get feature vector from CNN model
 
         # prediction step
