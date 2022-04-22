@@ -58,6 +58,7 @@ def main():
         # get a feature vector
         #img = image.load_img(path, target_size=(224, 224)) # load the saved img from the path and convert to (299,299,3) RGB img
         img = Image.open(file_up)
+        img = img.convert('RGB')
         img = img.resize((224,224))
 
         feature = get_feature_(img) # get feature vector from CNN model
