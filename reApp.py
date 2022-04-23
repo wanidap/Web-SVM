@@ -15,7 +15,16 @@ from tensorflow.keras.applications.densenet import preprocess_input
 
 def title():
     # Declare title app
-    st.title("Pneumonia Classification Web App")
+    title_container = st.container()
+    col1, col2 = st.columns([20,1])
+    image = Image.open("image_logo.png")
+    with title_container:
+        with col1:
+            st.markdown('<h1 style="color: purple;">Pneumonia Classification Web App</h1>',
+                            unsafe_allow_html=True)
+        with col2:
+            st.image(image, width=200)
+    #st.title("Pneumonia Classification Web App")
     st.write("""Predicting Pneumonia Using Stochastic Sub-gradient Support Vector Machine with generalized Pinball loss function (SGD-GSVM) from Chest X-ray Images.""")
     st.subheader('Demo for image classification.')
     img = Image.open("Pneumonia.png")
