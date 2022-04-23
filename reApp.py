@@ -1,11 +1,10 @@
 import os
 import uuid
-from PIL import Image
+from PIL import Image, ImageOps
 
 import numpy as np
 import pandas as pd
 import streamlit as st
-import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications import  InceptionV3,DenseNet201
@@ -20,17 +19,35 @@ def title():
     image = Image.open("image_logo.png")
     with title_container:
         with col1:
-            st.markdown('<h1 style="color: navy;">Pneumonia Classification Web App</h1>',
+            st.markdown('<h1 style="color: navy;">Iris Classification Web App</h1>',
                             unsafe_allow_html=True)
         with col2:
             st.image(image, width=200)
     #st.title("Pneumonia Classification Web App")
-    st.write("""Predicting Pneumonia Using Stochastic Sub-gradient Support Vector Machine with generalized Pinball loss function (SGD-GSVM) from Chest X-ray Images.""")
-    st.subheader('Demo for image classification.')
-    img = Image.open("Pneumonia.png")
-    st.image(img, width=500)
+    st.write("""Predicting Pneumonia Using Stochastic Sub-gradient Support Vector Machine with generalized Pinball loss function (SGD-GSVM) from Chest X-ray Images. Pneumonia is the most common disease caused
+by various microbial species such as bacteria, viruses, and fungi that inflame the air
+sacs in one or both lungs. There are 5,856 x-ray images out of which 4273 are positive for Pneumonia infection i.e. Pneumonia (+) and the rest 1583 are negative for Pneumonia infection i.e. Normal (-).""")
+    #st.subheader('Demo for image classification.')
+    col1, col2 = st.columns(2)
+    original = Image.open("IM-0007-0001.jpeg")
+    col1.subheader("Normal")
+    col1.image(original, use_column_width=True)
 
-
+    grayscale = Image.open("person5_bacteria_15.jpeg")
+    col2.subheader("Pneumonia")
+    col2.image(grayscale, use_column_width=True)
+    #img = Image.open("Pneumonia.png")
+    #st.image(img, width=500)
+    st.write("For the Pneumonia recognition dataset, we resized all images to an appropriate size based on the CNN model, and every image had been converted from RGB to grayscale color image. Moreover, feature extraction is a powerful technology that influences image recognition accuracy. We have used an automatic extraction algorithm called Convolutional Neural Networks (CNN) for feature extraction.")
+    st.write("The training and testing accuracy for Pneumonia recognition dataset are 94.96% and 94.11%, respectively which is given by DenseNet201 CNN combined with our SGD-GSVM model.")
+    with st.sidebar:
+        #img = Image.open("logo.png")
+        #st.image(img, width=100)
+        st.header("Contact:")
+        st.write("Wanida Panup")
+        st.write("Tel. 088-4365416")
+        st.write("Email. wanidap56@nu.ac.th")
+        st.write("Address: 54/1, Moo 4, Khun Fang subdistrict, Mueang Uttaradit, Uttaradit Province, Thailand 53000")
 def get_feature_(img):
     # load base model
     base_model = DenseNet201(weights="imagenet")
@@ -56,16 +73,10 @@ def main():
     file_up = st.file_uploader("Upload an image", type=['png','jpeg','jpg'])
 
     if file_up is not None:
-        #random_name = str(uuid.uuid4()) # get unique name for the uploaded img
-        #path = os.path.join(".", "userUpload", f"{random_name}.jpg") # get the saved img's path
-        #Image.open(file_up).save(path) # save the img to the disk
-        #st.image(Image.open(path), caption = 'Uploaded Image.', width=200) # display image that user uploaded
-        st.image(file_up, caption = 'Uploaded Image.', width=200)
+        st.image(file_up, caption = 'Uploaded Image.', width=300)
         st.write("")
         st.write("Just a second ...")
 
-        # get a feature vector
-        #img = image.load_img(path, target_size=(224, 224)) # load the saved img from the path and convert to (299,299,3) RGB img
         img = Image.open(file_up)
         img = img.convert('RGB')
         img = img.resize((224,224))
