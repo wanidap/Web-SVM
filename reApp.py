@@ -75,9 +75,9 @@ def main():
         # prediction step
         p = predict(feature) # predict the class by using the CNN feature of the img.
         if p >= 0:
-            st.write("""Prediction: **Normal**""")
+            st.write("""**Prediction**: _Normal_.""")
         else:
-            st.write("""Prediction: **Pneumonia**""")
+            st.write("""**Prediction**: _Pneumonia_.""")
 
 
 if __name__=="__main__":
