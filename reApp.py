@@ -26,7 +26,7 @@ def title():
     #st.title("Pneumonia Classification Web App")
     st.write("""Predicting Pneumonia Using Stochastic Sub-gradient Support Vector Machine with generalized Pinball loss function (SGD-GSVM) from Chest X-ray Images. Pneumonia is the most common disease caused
 by various microbial species such as bacteria, viruses, and fungi that inflame the air
-sacs in one or both lungs. There are 5,856 x-ray images out of which 4273 are positive for Pneumonia infection i.e. Pneumonia (+) and the rest 1583 are negative for Pneumonia infection i.e. Normal (-).""")
+sacs in one or both lungs. There are 5,856 x-ray images out of which 4,273 are positive for Pneumonia infection i.e. Pneumonia (+) and the rest 1,583 are negative for Pneumonia infection i.e. Normal (-).""")
     #st.subheader('Demo for image classification.')
     col1, col2 = st.columns(2)
     original = Image.open("IM-0007-0001.jpeg")
