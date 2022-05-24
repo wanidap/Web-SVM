@@ -96,7 +96,7 @@ def main():
         # prediction step
         p = predict(feature) # predict the class by using the CNN feature of the img.
         if p >= 0:
-            st.write("""**Prediction**: _Normal_.""")
+            st.write("""**Prediction**: _Normal_.""")st.markdown(f'<h1 style="color:navy;font-size:25px;">{"_Normal_."}</h1>', unsafe_allow_html=True)
         else:
             st.write("""**Prediction**: _Pneumonia_.""")
 
