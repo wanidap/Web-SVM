@@ -45,7 +45,7 @@ sacs in one or both lungs. There are 5,856 x-ray images out of which 4,273 are p
         st.markdown(f'<h1 style="color:navy;font-size:25px;">{"Contact:"}</h1>', unsafe_allow_html=True)
         #st.header("Contact:")
         st.write("Wanida Panup")
-        st.write("Tel. 088-4365416")
+        st.write("Tel.  (+66)8 8436 5416")
         st.write("Email. wanidap56@nu.ac.th")
         st.write("Address: 54/1, Moo 4, Khun Fang subdistrict, Mueang Uttaradit, Uttaradit Province, Thailand 53000")
         img = Image.open("logo1.png")
