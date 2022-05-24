@@ -11,7 +11,7 @@ from tensorflow.keras.applications import  InceptionV3,DenseNet201
 from tensorflow.keras.applications.inception_v3 import preprocess_input
 from tensorflow.keras.applications.densenet import preprocess_input
 
-
+backgroundColor="#f0f0f5"
 def title():
     # Declare title app
     #title_container = st.container()
