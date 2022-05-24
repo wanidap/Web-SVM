@@ -19,7 +19,7 @@ def title():
     #image = Image.open("logo1.png")
     #with title_container:
         #with col1:
-           # st.markdown('<h1 style="color: navy;">Pneumonia Classification</h1>',
+           # st.markdown('<h1 style="color: navy;">Pneumonia Classification"waving_black_flag"</h1>',
                          #   unsafe_allow_html=True)
         #with col2:
             #st.image(image, width=200)
