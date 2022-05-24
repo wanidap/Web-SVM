@@ -50,11 +50,9 @@ sacs in one or both lungs. There are 5,856 x-ray images out of which 4,273 are p
         st.write("Address: 54/1, Moo 4, Khun Fang subdistrict, Mueang Uttaradit, Uttaradit Province, Thailand 53000")
         col1, col2 = st.columns(2)
         original = Image.open("NUlogo.png")
-        col1.subheader("Normal")
         col1.image(original, use_column_width=True)
 
         grayscale = Image.open("SCIlogo.png")
-        col2.subheader("Pneumonia")
         col2.image(grayscale, use_column_width=True)
         #img = Image.open("NUlogo.png")
         #st.image(img, width=100)
