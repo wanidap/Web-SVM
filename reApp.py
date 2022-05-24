@@ -47,7 +47,7 @@ sacs in one or both lungs. There are 5,856 x-ray images out of which 4,273 are p
         st.write("Email. wanidap56@nu.ac.th")
         st.write("Address: 54/1, Moo 4, Khun Fang subdistrict, Mueang Uttaradit, Uttaradit Province, Thailand 53000")
         img = Image.open("logo1.png")
-        st.image(img, width=100)
+        st.image(img, width=300)
         img = Image.open("NUlogo.png")
         st.image(img, width=100)
 def get_feature_(img):
