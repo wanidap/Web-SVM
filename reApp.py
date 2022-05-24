@@ -23,8 +23,8 @@ def title():
                          #   unsafe_allow_html=True)
         #with col2:
             #st.image(image, width=200)
-    st.title("Pneumonia Classification Web App "waving_black_flag"")
-    #st.markdown(f'<h1 style="color:navy;font-size:45px;">{"Pneumonia Classification Web App"}</h1>', unsafe_allow_html=True)
+    #st.title("Pneumonia Classification Web App")
+    st.markdown(f'<h1 style="color:navy;font-size:45px;">{"Pneumonia Classification Web App"}</h1>', unsafe_allow_html=True)
     st.write("""Predicting Pneumonia Using Stochastic Sub-gradient Support Vector Machine with generalized Pinball loss function (SGD-GSVM) from Chest X-ray Images. Pneumonia is the most common disease caused
 by various microbial species such as bacteria, viruses, and fungi that inflame the air
 sacs in one or both lungs. There are 5,856 x-ray images out of which 4,273 are positive for Pneumonia infection i.e. Pneumonia (+) and the rest 1,583 are negative for Pneumonia infection i.e. Normal (-).""")
