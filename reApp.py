@@ -14,16 +14,18 @@ from tensorflow.keras.applications.densenet import preprocess_input
 
 def title():
     # Declare title app
-    title_container = st.container()
-    col1, col2 = st.columns([20,1])
-    image = Image.open("logo1.png")
-    with title_container:
-        with col1:
-            st.markdown('<h1 style="color: navy;">Pneumonia Classification</h1>',
+   # title_container = st.container()
+   # col1, col2 = st.columns([20,1])
+   # image = Image.open("logo1.png")
+   # with title_container:
+    #    with col1:
+     #       st.markdown('<h1 style="color: navy;">Pneumonia Classification</h1>',
                             unsafe_allow_html=True)
-        with col2:
-            st.image(image, width=200)
-    #st.title("Pneumonia Classification Web App")
+     #   with col2:
+       #     st.image(image, width=200)
+    st.markdown('<h1 style="color: navy;">Pneumonia Classification</h1>',
+                            unsafe_allow_html=True)
+    st.title("Pneumonia Classification Web App")
     st.write("""Predicting Pneumonia Using Stochastic Sub-gradient Support Vector Machine with generalized Pinball loss function (SGD-GSVM) from Chest X-ray Images. Pneumonia is the most common disease caused
 by various microbial species such as bacteria, viruses, and fungi that inflame the air
 sacs in one or both lungs. There are 5,856 x-ray images out of which 4,273 are positive for Pneumonia infection i.e. Pneumonia (+) and the rest 1,583 are negative for Pneumonia infection i.e. Normal (-).""")
@@ -48,8 +50,16 @@ sacs in one or both lungs. There are 5,856 x-ray images out of which 4,273 are p
         st.write("Tel. 088-4365416")
         st.write("Email. wanidap56@nu.ac.th")
         st.write("Address: 54/1, Moo 4, Khun Fang subdistrict, Mueang Uttaradit, Uttaradit Province, Thailand 53000")
-        img = Image.open("NUlogo.png")
-        st.image(img, width=100)
+        col1, col2 = st.columns(2)
+        original = Image.open("NUlogo.png")
+        col1.subheader("Normal")
+        col1.image(original, use_column_width=True)
+
+        grayscale = Image.open("SCIlogo.png")
+        col2.subheader("Pneumonia")
+        col2.image(grayscale, use_column_width=True)
+        #img = Image.open("NUlogo.png")
+        #st.image(img, width=100)
 def get_feature_(img):
     # load base model
     base_model = DenseNet201(weights="imagenet")
