@@ -13,10 +13,6 @@ from tensorflow.keras.applications.densenet import preprocess_input
 
 
 def title():
-    [theme]
-
-    primaryColor="#6eb52f"
-    backgroundColor="#f0f0f5"
     # Declare title app
     #title_container = st.container()
     #col1, col2 = st.columns([20,1])
