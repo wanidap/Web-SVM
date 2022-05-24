@@ -16,7 +16,7 @@ def title():
     # Declare title app
     title_container = st.container()
     col1, col2 = st.columns([20,1])
-    image = Image.open("logo.png")
+    image = Image.open("logo1.png")
     with title_container:
         with col1:
             st.markdown('<h1 style="color: navy;">Pneumonia Classification</h1>',
@@ -46,7 +46,7 @@ sacs in one or both lungs. There are 5,856 x-ray images out of which 4,273 are p
         st.write("Tel. 088-4365416")
         st.write("Email. wanidap56@nu.ac.th")
         st.write("Address: 54/1, Moo 4, Khun Fang subdistrict, Mueang Uttaradit, Uttaradit Province, Thailand 53000")
-        img = Image.open("logo.png")
+        img = Image.open("logo1.png")
         st.image(img, width=100)
 def get_feature_(img):
     # load base model
